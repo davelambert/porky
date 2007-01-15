@@ -359,6 +359,25 @@
       :request-time time
       :body (net.aserve.client:client-request-socket request))))
 
+#+lispworks
+(defmethod http-request ((url http-url) method
+                         &key (proxy (find-http-proxy))
+                         (accept "application/rdf+xml"))
+  (let ((time (get-universal-time)))
+    (multiple-value-bind (stream status headers) (drakma:http-request (url-string url)
+                                                 :method method
+                                                 :proxy (if proxy (list (url-host proxy) (or (url-port proxy) 80) nil))
+                                                 :accept accept
+                                                 :want-stream t)
+      (setf (flexi-streams:flexi-stream-element-type stream) 'character)
+      (make-instance 'http-message
+                     :status status
+                     :version :don-know
+                     :headers headers
+                     :request-time time
+                     :body (and (eq method :get)
+                                stream)))))
+
 #+(and :openmcl (not :http-using-aserve))
 (defun make-curl-http-request (method url proxy accept)
   (declare (special *http-parse-buffers*))

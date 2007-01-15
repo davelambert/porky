@@ -101,6 +101,7 @@
     :version "2"
     :licence "NOKOS 1.0a"
     :description "WILBUR2: Nokia's Semantic Web Toolkit for CLOS"
+    :depends-on (#+lispworks drakma)
     :components ((:file "packages")
 		 (:file "platform" :depends-on ("packages"))
 		 (:module :nox

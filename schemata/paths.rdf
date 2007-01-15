@@ -1,0 +1,121 @@
+<?xml version="1.0" ?> 
+
+<!--
+      This is a definition of schema for Wilbur2. It can be loaded from any location, and
+      not necessarily its "official" location:
+
+        http://wilbur-rdf.sourceforge.net/schemata/2/wilbur
+
+      The schema contains some basic definitions for "useful" classes and properties.
+
+      Author: Ora Lassila
+
+      Copyright 2005 Nokia Research Center. All Rights Reserved.
+
+      $Id: wilbur.rdf,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
+-->
+
+<!DOCTYPE uridef [
+  <!ENTITY rdf    "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs   "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl    "http://www.w3.org/2002/07/owl">
+  <!ENTITY dc     "http://purl.org/dc/elements/1.1/">
+  <!ENTITY wilbur "http://wilbur-rdf.sourceforge.net/schemata/2/wilbur#">
+]>
+
+<rdf:RDF xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:owl="&owl;" xmlns:dc="&dc;"
+	 xmlns:wilbur="&wilbur;">
+
+  <owl:Ontology rdf:about="http://wilbur-rdf.sourceforge.net/schemata/2/wilbur">
+    <dc:title>Wilbur2 Schema</dc:title>
+  </owl:Ontology>
+
+  <rdfs:Class rdf:about="&wilbur;QueryOperator"/>
+
+  <rdfs:Class rdf:about="&wilbur;QueryOperator1">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;QueryOperatorN">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Seq">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperatorN"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;SeqPlus">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperatorN"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Or">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperatorN"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Rep">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator1"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;RepPlus">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator1"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Inv">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator1"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Value">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryOperator1"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;QueryAtom"/>
+
+  <rdfs:Class rdf:about="&wilbur;Member">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryAtom"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;Any">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryAtom"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;PredicateOfObject">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryAtom"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;PredicateOfSubject">
+    <rdfs:subClassOf rdf:resource="&wilbur;QueryAtom"/>
+  </rdfs:Class>
+
+  <rdf:Property rdf:about="&wilbur;operand">
+    <rdfs:domain rdf:resource="&wilbur;QueryOperator1"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="&wilbur;operands">
+    <rdfs:domain rdf:resource="&wilbur;QueryOperatorN"/>
+    <rdfs:range rdf:resource="&rdf;Seq"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="&wilbur;QueriedProperty"/>
+
+  <rdf:Property rdf:about="&wilbur;query">
+    <rdfs:domain rdf:resource="&wilbur;QueriedProperty"/>
+  </rdf:Property>
+
+  <wilbur:QueriedProperty rdf:about="&wilbur;instanceOf">
+    <wilbur:query>
+      <wilbur:Seq rdf:about="&wilbur;InstanceRelation">
+        <wilbur:operands>
+	  <rdf:Seq>
+	    <rdf:li rdf:resource="&rdf;type"/>
+	    <rdf:li>
+	      <wilbur:Rep>
+	        <wilbur:operand rdf:resource="&rdfs;subClassOf"/>
+	      </wilbur:Rep>
+	    </rdf:li>
+	  </rdf:Seq>
+	</wilbur:operands>
+      </wilbur:Seq>
+    </wilbur:query>
+  </wilbur:QueriedProperty>
+
+</rdf:RDF>

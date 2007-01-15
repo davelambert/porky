@@ -1,0 +1,88 @@
+<?xml version="1.0" ?> 
+
+<!--
+      This is a definition of schema for Wilbur2. It can be loaded from any location, and
+      not necessarily its "official" location:
+
+        http://wilbur-rdf.sourceforge.net/schemata/2/wilbur
+
+      The schema contains some basic definitions for "useful" classes and properties.
+
+      Author: Ora Lassila
+
+      Copyright 2005 Nokia Research Center. All Rights Reserved.
+
+      $Id: wilbur.rdf,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
+-->
+
+<!DOCTYPE uridef [
+  <!ENTITY rdf    "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!ENTITY rdfs   "http://www.w3.org/2000/01/rdf-schema#">
+  <!ENTITY owl    "http://www.w3.org/2002/07/owl">
+  <!ENTITY dc     "http://purl.org/dc/elements/1.1/">
+  <!ENTITY foaf   "http://xmlns.com/foaf/0.1/">
+  <!ENTITY rss    "http://purl.org/rss/1.0/">
+  <!ENTITY doap   "http://usefulinc.com/ns/doap#">
+  <!ENTITY wilbur "http://wilbur-rdf.sourceforge.net/schemata/2/wilbur#">
+]>
+
+<rdf:RDF xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" xmlns:owl="&owl;"
+         xmlns:dc="&dc;" xmlns:foaf="&foaf;" xmlns:rss="&rss;" xmlns:doap="&doap;"
+	 xmlns:wilbur="&wilbur;">
+
+  <owl:Ontology rdf:about="http://wilbur-rdf.sourceforge.net/schemata/2/wilbur">
+    <dc:title>Wilbur2 Schema</dc:title>
+  </owl:Ontology>
+
+  <doap:Project
+     doap:name="Wilbur"
+     doap:shortdesc="CLOS-based Semantic Web Toolkit"
+     doap:programming-language="Common Lisp">
+    <doap:homepage rdf:resource="http://wilbur-rdf.sourceforge.net"/>
+    <doap:location>
+      <doap:CVSRepository rdf:about="http://wilbur-rdf.sourceforge.net"/>
+    </doap:location>
+    <doap:maintainer>
+      <foaf:Person rdf:about="http://www.lassila.org/ora.rdf#me"
+         foaf:name="Ora Lassila"/>
+    </doap:maintainer>
+    <doap:license rdf:resource="http://www.opensource.org/licenses/nokia.html"/>
+    <rdfs:seeAlso>
+      <rss:channel rdf:about="http://www.lassila.org/blog/index.rdf"/>
+    </rdfs:seeAlso>
+  </doap:Project>
+
+  <rdfs:Class rdf:about="&wilbur;Rule"
+     rdfs:label="Wilbur Rule"
+     rdfs:comment="Base class of all rule classes processed by the Wilbur rule engine.">
+    <rdfs:subClassOf rdf:resource="&rdf;Property"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="&wilbur;PathRewriteRule"
+     rdfs:label="Wilbur Path Rewrite Rule"
+     rdfs:comment="Class of path rewrite rules processed by the Wilbur rule engine.">
+    <rdfs:subClassOf rdf:resource="&wilbur;Rule"/>
+  </rdfs:Class>
+
+  <rdf:Property rdf:about="&wilbur;path"
+     rdfs:label="path query expression">
+    <rdfs:domain rdf:resource="&wilbur;PathRewriteRule"/>
+    <rdfs:range rdf:resource="&rdfs;Literal"/>
+  </rdf:Property>
+
+  <rdfs:Class rdf:about="&wilbur;AccessDaemon"
+     rdfs:label="Access Daemon">
+    <rdfs:subClassOf rdf:resource="&wilbur;Rule"/>
+  </rdfs:Class>
+
+  <wilbur:AccessDaemon rdf:about="&wilbur;timeStamp"
+     rdfs:label="time stamp"/>
+
+  <wilbur:AccessDaemon rdf:about="&wilbur;tripleCount"
+     rdfs:label="number of triples"/>
+
+  <rdf:Property rdf:about="&dc;title">
+    <rdfs:subPropertyOf rdf:resource="&rdfs;label"/>
+  </rdf:Property>
+
+</rdf:RDF>

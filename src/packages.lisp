@@ -39,7 +39,7 @@
 ;;;
 
 (defpackage "WILBUR"
-  (:nicknames "W"
+  (:nicknames #-(and :lispworks :win32) "W"
 	      "NOX")			; so as not to have many packages anymore
   (:use "COMMON-LISP"
 	#+:mcl "CCL"

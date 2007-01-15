@@ -83,7 +83,12 @@
 (defmacro with-lock ((lock &rest args) &body body)
   `(sb-thread:with-mutex (,lock ,@args) ,@body))
 
-#-(or :mcl :excl :sbcl)
+#+lispworks
+(defmacro with-lock ((lock &rest args) &body body)
+  `(mp:with-lock (,lock ,@args)
+     ,@body))
+
+#-(or :mcl :excl :sbcl :lispworks)
 (defmacro with-lock ((lock &rest args) &body body)
   (declare (ignore lock args body))
   (error "No locking defined (WITH-LOCK) in this implementation"))
@@ -95,6 +100,10 @@
 #+:sbcl
 (defun make-lock ()
   (sb-thread:make-mutex))
+
+#+lispworks
+(defun make-lock ()
+  (mp:make-lock))
 
 #-(or :excl :sbcl :mcl) ; MCL already has MAKE-LOCK
 (defun make-lock ()
@@ -133,7 +142,10 @@
 (defun get-env (key)
   (sb-ext:posix-getenv (string key)))
 
-#-(or :openmcl :excl :sbcl)
+(defun get-env (key)
+  (lw:environment-variable key))
+
+#-(or :openmcl :excl :sbcl :lispworks)
 (defun get-env (key)
   (error "Cannot get the environment variable ~S" key))
 

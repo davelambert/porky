@@ -25,7 +25,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: rdf-parser.lisp,v 1.3 2006/02/07 01:50:11 ora Exp $
 ;;;
 ;;;   Purpose: This file contains an implementation of an RDF parser, using a
 ;;;   "near streaming" algorithm based on a simple state machine. The parser

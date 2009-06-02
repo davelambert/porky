@@ -20,7 +20,6 @@
  *
  * --------------------------------------------------------------------------------------
  *
- *   Version: $Id: FindProxies.c,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
  *
  *   Purpose: Function to determine the current HTTP proxy on MacOS X
  *

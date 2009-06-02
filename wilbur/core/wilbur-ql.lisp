@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: wilbur-ql.lisp,v 1.2 2006/02/04 21:19:02 ora Exp $
 ;;;
 ;;;   Purpose: This file implements the Wilbur Query Language (WilburQL) which essentially
 ;;;   is a simple API on top of the RDF data manager (in "core-data.lisp"). Much of the

@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: core-constants.lisp,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
 ;;;
 ;;;   Purpose: This file contains definitions for various constants used by the
 ;;;   RDF parser (mostly URIs). Given that the XML parser has to deal with the

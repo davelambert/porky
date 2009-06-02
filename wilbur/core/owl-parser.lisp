@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: owl-parser.lisp,v 1.3 2006/02/07 01:50:08 ora Exp $
 ;;;
 ;;;   Purpose: This file contains a parser for OWL, derived from the old DAML parser.
 ;;;

@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: ivanhoe.lisp,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
 ;;;
 ;;;   Purpose: The old "db-hiding" frame API ("Ivanhoe") is grandfathered here.
 ;;;

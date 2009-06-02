@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: data.lisp,v 1.3 2006/02/07 01:50:03 ora Exp $
 ;;;
 ;;;   Purpose: This file contains functionality for managing "RDF data", namely nodes,
 ;;;   triples, etc.

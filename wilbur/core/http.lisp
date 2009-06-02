@@ -25,7 +25,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: http.lisp,v 1.3 2006/02/07 01:50:06 ora Exp $
 ;;;
 ;;;   Purpose: This is a simple implementation of an HTTP client, conditionalized for
 ;;;   several platforms and environments. OK, so it is somewhat braindead, but at least

@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: rdf-inspector.lisp,v 1.1.1.1 2005/09/25 20:40:37 ora Exp $
 ;;;
 ;;;   Purpose: This file contains various kinds of functionality for visualizing as well
 ;;;   as browsing RDF data and WilburQL queries (using the MCL Inspector, PowerGrapher

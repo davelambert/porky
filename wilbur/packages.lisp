@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: packages.lisp,v 1.1 2006/02/07 01:45:47 ora Exp $
 ;;;
 ;;;   Purpose: This file contains the package definition for WILBUR.
 ;;;

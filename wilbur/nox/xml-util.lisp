@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: xml-util.lisp,v 1.2 2006/02/04 21:19:09 ora Exp $
 ;;;
 ;;;   Purpose: This file contains useful functions and other definitions for
 ;;;   implementing an XML parser (or some other stuff, for that matter). These

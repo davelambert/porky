@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: wilbur-package.lisp,v 1.2 2006/02/04 21:18:59 ora Exp $
 ;;;
 ;;;   Purpose: Definition of the package "WILBUR".
 ;;;

@@ -25,7 +25,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: xml-parser.lisp,v 1.2 2006/02/07 01:47:42 ora Exp $
 ;;;
 ;;;   Purpose: This file contains an implementation of an XML parser. This
 ;;;   parser was motivated by RDF, and consequently does not implement all the

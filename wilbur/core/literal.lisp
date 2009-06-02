@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: literal.lisp,v 1.2 2006/02/04 21:18:52 ora Exp $
 ;;;
 ;;;   Purpose: Definition of the class LITERAL and associated functionality
 ;;;

@@ -24,7 +24,6 @@
 ;;; --------------------------------------------------------------------------------------
 ;;;
 ;;;
-;;;   Version: $Id: platform.lisp,v 1.1 2006/02/07 01:45:48 ora Exp $
 ;;;
 ;;;   Purpose: This file contains various platform-dependent functions and macros.
 ;;;   Currently, we support MCL, OpenMCL, Allegro and SBCL. There is no reason why Wilbur

@@ -38,13 +38,13 @@
 ;;;
 
 (eval-when (:compile-toplevel :load-toplevel)
-  (defconstant -daml+oil-uri-   "http://www.daml.org/2000/12/daml+oil#"))
+  (define-constant -daml+oil-uri-   "http://www.daml.org/2000/12/daml+oil#"))
 
 (eval-when (:compile-toplevel :load-toplevel)
-  (defconstant -daml-list-uri-  #.(concatenate 'string -daml+oil-uri- "List"))
-  (defconstant -daml-first-uri- #.(concatenate 'string -daml+oil-uri- "first"))
-  (defconstant -daml-rest-uri-  #.(concatenate 'string -daml+oil-uri- "rest"))
-  (defconstant -daml-nil-uri-   #.(concatenate 'string -daml+oil-uri- "nil")))
+  (define-constant -daml-list-uri-  #.(concatenate 'string -daml+oil-uri- "List"))
+  (define-constant -daml-first-uri- #.(concatenate 'string -daml+oil-uri- "first"))
+  (define-constant -daml-rest-uri-  #.(concatenate 'string -daml+oil-uri- "rest"))
+  (define-constant -daml-nil-uri-   #.(concatenate 'string -daml+oil-uri- "nil")))
 
 
 ;;; --------------------------------------------------------------------------------------

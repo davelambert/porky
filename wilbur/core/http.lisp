@@ -395,7 +395,7 @@
 			   (compute-response parse-buffer))
       (values status version headers input))))
 
-(defconstant -new-line-string- (concatenate 'string (list #\Return #\Linefeed)))
+(define-constant -new-line-string- (concatenate 'string (list #\Return #\Linefeed)))
 
 (defun make-http-request (method url-path url-host accept)
   (format nil "~@:(~A~) ~A HTTP/1.1~A~

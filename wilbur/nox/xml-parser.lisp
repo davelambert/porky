@@ -41,12 +41,12 @@
 ;;;
 
 (eval-when (:compile-toplevel :load-toplevel)
-  (defconstant -name-start-characters-
+  (define-constant -name-start-characters-
     (let ((s (concatenate 'string
                           (loop for i from (char-code #\a) to (char-code #\z)
                                 collect (code-char i)))))
       (concatenate 'string s (string-upcase s) "_:")))
-  (defconstant -name-characters-
+  (define-constant -name-characters-
     (let ((v (make-array 256)))
       (dotimes (i 256)
         (setf (svref v i) nil))
@@ -257,7 +257,7 @@
     :accessor parser-locator)))
 
 (eval-when (:compile-toplevel :load-toplevel)
-  (defconstant -standard-entities- '(("gt"   . ">")
+  (define-constant -standard-entities- '(("gt"   . ">")
                                      ("lt"   . "<")
                                      ("amp"  . "&")
                                      ("quot" . "\"")

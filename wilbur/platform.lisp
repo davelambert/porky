@@ -156,3 +156,11 @@
 		       `(,variable (gentemp)))
 		   variables))
     ,@body))
+
+
+;;; SBCL is anally-retentive about ‘redefinitions’ of defconstants, so
+;;; we use this to placate it.
+;;; http://www.sbcl.org/manual/Defining-Constants.html
+(defmacro define-constant (name value &optional doc)
+  `(defconstant ,name (if (boundp ',name) (symbol-value ',name) ,value)
+     ,@(when doc (list doc))))

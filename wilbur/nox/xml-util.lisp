@@ -373,7 +373,7 @@
 	    (not (graphic-char-p ,c)))))))
 
 (eval-when (:compile-toplevel :load-toplevel)
-  (defconstant -whitespace-chars-
+  (define-constant -whitespace-chars-
     (let ((chars nil))
       (dotimes (i 256)
         (let ((c (code-char i)))

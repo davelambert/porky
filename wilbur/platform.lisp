@@ -141,6 +141,7 @@
 (defun get-env (key)
   (sb-ext:posix-getenv (string key)))
 
+#+:lispworks
 (defun get-env (key)
   (lw:environment-variable key))
 

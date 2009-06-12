@@ -1,3 +1,16 @@
 # Ignore compiled Lisp files.
 *.fasl
 *.ufasl
+
+# Junk from Texinfo
+doc/*.aux
+doc/*.cp
+doc/*.fn
+doc/*.html
+doc/*.ky
+doc/*.log
+doc/*.pdf
+doc/*.pg
+doc/*.toc
+doc/*.tp
+doc/*.vr

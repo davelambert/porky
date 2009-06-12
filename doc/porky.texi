@@ -1,0 +1,86 @@
+\input texinfo
+
+@setfilename porky.info
+@settitle Porky Manual 0.0
+@documentencoding UTF-8
+
+@macro definition {word}
+@emph{\word\}
+@end macro
+
+@copying
+A manual for the Porky RDF library.
+
+Copyright © 2009 The Open University.
+@end copying
+
+@titlepage
+@title Porky: An RDF library for Common Lisp
+@author Dave Lambert
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the table of the contents at the beginning.
+@contents
+
+@ifnottex
+@node Top, Introduction, (dir), (dir)
+@top The Internet Reasoning Service
+
+@insertcopying
+@end ifnottex
+
+@menu
+* Introduction::                
+* Getting started::             
+* Basic usage::                 
+* Function Index::              
+* Concept Index::               
+@end menu
+
+@node Introduction, Getting started, Top, Top
+@chapter Introduction
+
+Porky is a Common Lisp library for working with the Semantic Web.  It
+is an amalgam of Ora Lassila's Wilbur library, several Wilbur
+extensions from Richard Newman, and some new code from others.
+
+@node Getting started, Basic usage, Introduction, Top
+@chapter Getting started
+
+You can get the Porky source code using the Git version control
+system@footnote{Git is available from @url{http://git.or.cz}.}.  The
+repository is hosted at
+@url{http://github.com/davelambert/porky/tree/master}.
+
+@smallexample
+$ git clone git://github.com/davelambert/porky.git
+@end smallexample
+
+This should leave you with a new directory called @file{porky}.  See
+the file @file{porky/INSTALL} for installation instructions.
+
+@node Basic usage, Function Index, Getting started, Top
+@chapter Basic usage
+
+@smallexample
+> (wilbur:db-load (make-instance 'wilbur:db) *xmlrdf-file*)
+
+> (wilbur:db-load (make-instance 'wilbur:db) *xmlrdf-file*
+                  :parser-class 'wilbur:rdf-parser)
+
+> (wilbur:db-load (make-instance 'porky.io.turtle:turtle-db) *turtle-file*
+                  :parser-class 'porky.io.turtle::turtle-parser)
+@end smallexample
+
+@node Function Index, Concept Index, Basic usage, Top
+@unnumbered Function Index
+@printindex fn
+
+@node Concept Index,  , Function Index, Top
+@unnumbered Concept Index
+@printindex cp
+
+@bye

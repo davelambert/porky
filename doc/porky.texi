@@ -73,6 +73,9 @@ the file @file{porky/INSTALL} for installation instructions.
 
 > (wilbur:db-load (make-instance 'porky.io.turtle:turtle-db) *turtle-file*
                   :parser-class 'porky.io.turtle::turtle-parser)
+
+> (wilbur:db-load (make-instance 'porky.io.ntriples:ntriples-db) *ntriples-file*
+                  :parser-class 'porky.io.ntriples:ntriples-parser)
 @end smallexample
 
 @node Function Index, Concept Index, Basic usage, Top

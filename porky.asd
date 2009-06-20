@@ -19,6 +19,14 @@
                     :depends-on ("defpackage"))
              (:file "support"
                     :depends-on ("defpackage"))
+
+             (:file "ntriples-lexer"
+                    :depends-on ("defpackage" "support"))
+             (:file "ntriples-grammar"
+                    :depends-on ("defpackage" "support" "ntriples-lexer"))
+             (:file "ntriples"
+                    :depends-on ("defpackage" "io" "ntriples-grammar"))
+
              (:file "turtle-lexer"
                     :depends-on ("defpackage" "support"))
              (:file "turtle-grammar"

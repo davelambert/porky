@@ -13,3 +13,7 @@
 (defpackage #:porky.io.turtle
     (:use #:common-lisp #:porky.io.support)
   (:export #:turtle-db #:turtle-parser))
+
+(defpackage #:porky.io.ntriples
+    (:use #:common-lisp #:porky.io.support)
+  (:export #:ntriples-db #:ntriples-parser))
